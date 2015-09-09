@@ -75,12 +75,12 @@ for (j in 1:length(p))      # use every non-noisy "p"
        # vector of all 500 simulations for each (p, sigma)
        b0.hat <- c(b0.hat, mylogit$coefficients[1])
        b1.hat <- c(b1.hat, mylogit$coefficients[2])
-       det.vcov.hat <- c(det.vcov, det(vcov(mylogit)))
+       det.vcov.hat <- c(det.vcov.hat, det(vcov(mylogit)))
     }
        # create for each sigma, p, vector for b0 and b1, and vcov for 500 runs.
        b0.vec[j,k,1] <- mean(b0.hat); b0.vec[j,k,2] <- sd(b0.hat)
        b1.vec[j,k,1] <- mean(b1.hat); b1.vec[j,k,2] <- sd(b1.hat)
-       det.vcov.vec[j,k,1] <- mean(det.vcov.hat); det.vcov.vec[j,k,2] <- sd(det.vcov.vec);  
+       det.vcov.vec[j,k,1] <- mean(det.vcov.hat); det.vcov.vec[j,k,2] <- sd(det.vcov.hat);  
   }
 }
 
@@ -182,6 +182,6 @@ for (i in 1:5)
 
 
 
-save(list = ls(all = TRUE), file = "WilliamTell.11Aug2015.RData")
+save(list = ls(all = TRUE), file = "WilliamTell.01Sep2015.RData")
 
 
